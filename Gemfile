@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-# Use postgresql as the database for Active Record
+# Use sqlite3 as the database for Active Record
 gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,5 +40,41 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'rails_12factor', group: :production
-gem 'pry', group: :development
+group :development, :test do
+  gem 'byebug'
+  gem 'delorean'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 2.13'
+  gem 'mock_redis', '~> 0.13.0'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'letter_opener'
+  gem 'bullet'
+  gem 'meta_request'
+  gem 'capistrano', '~> 2.15'
+  gem 'rvm-capistrano'
+  gem 'capistrano-ext'
+  gem "zeus", "~> 0.13.4.pre2"
+end
+
+group :test do
+  gem 'capybara'
+  gem 'coveralls', require: false
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'selenium-webdriver'
+  gem 'simplecov', require: false
+  gem 'webmock', require: false
+end
+
+group :production do
+  gem 'rack-timeout'
+  gem 'rails_12factor'
+end

@@ -1,0 +1,32 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+DbImporter	app/classes/db_importer.rb	/^class DbImporter$/;"	c
+import_simple_table	app/classes/db_importer.rb	/^  def self.import_simple_table(name, columns, file, options = {})$/;"	F	class:DbImporter
+LotteryNumbersUpdater	app/classes/lottery_numbers_updater.rb	/^class LotteryNumbersUpdater$/;"	c
+parse_file	app/classes/lottery_numbers_updater.rb	/^  def self.parse_file(file, game_id)$/;"	F	class:LotteryNumbersUpdater
+update_all	app/classes/lottery_numbers_updater.rb	/^  def self.update_all$/;"	F	class:LotteryNumbersUpdater
+Predictors	app/classes/predictors/base.rb	/^class Predictors::Base$/;"	c
+predict	app/classes/predictors/base.rb	/^  def predict(type, strategy, options={})$/;"	f	class:Predictors
+Predictors	app/classes/predictors/data_loader.rb	/^class Predictors::DataLoader$/;"	c
+fetch_data	app/classes/predictors/data_loader.rb	/^  def fetch_data$/;"	f	class:Predictors
+initialize	app/classes/predictors/data_loader.rb	/^  def initialize(type)$/;"	f	class:Predictors
+MostCommon	app/classes/predictors/strategies/most_common.rb	/^  class MostCommon < Predictors::Base$/;"	c	class:Predictors
+Predictors	app/classes/predictors/strategies/most_common.rb	/^module Predictors$/;"	m
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
+index	app/controllers/home_controller.rb	/^  def index$/;"	f	class:HomeController
+set_predictor	app/controllers/home_controller.rb	/^  def set_predictor$/;"	f	class:HomeController
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+HomeHelper	app/helpers/home_helper.rb	/^module HomeHelper$/;"	m
+LotteryNumber	app/models/lottery_number.rb	/^class LotteryNumber < ActiveRecord::Base$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:LotteryPicker
+LotteryPicker	config/application.rb	/^module LotteryPicker$/;"	m
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+Utils	lib/utils.rb	/^class Utils$/;"	c
+create_temp_file	lib/utils.rb	/^  def self.create_temp_file(type = "utils_tmp", prefix = "tmp", options = {})$/;"	F	class:Utils
+create_temp_filename	lib/utils.rb	/^  def self.create_temp_filename(type = "util_tmp", prefix = "tmp", options = {})$/;"	F	class:Utils
+download_game_file	lib/utils.rb	/^  def self.download_game_file(game_name)$/;"	F	class:Utils
+load_file_to_db	lib/utils.rb	/^  def load_file_to_db(file)$/;"	f	class:Utils
