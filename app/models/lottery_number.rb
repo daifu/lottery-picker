@@ -4,11 +4,11 @@ class LotteryNumber < ActiveRecord::Base
 
   GAMES = {
     'superlotto-plus' => 1,
-    'powerball' => 2,
-    'mega-millions' => 3,
-    'fantasy-5' => 4,
-    'daily-4' => 5,
-    'daily-3' => 6
+    'powerball'       => 2,
+    'mega-millions'   => 3,
+    'fantasy-5'       => 4,
+    'daily-4'         => 5,
+    'daily-3'         => 6
   }
 
   def get_numbers_string_by_type(type)
