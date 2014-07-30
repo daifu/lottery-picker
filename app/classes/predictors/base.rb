@@ -3,7 +3,7 @@ class Predictors::Base
   def predict(type, strategy, options={})
     data_loader = Predictors::DataLoader.new(type)
     lists       = data_loader.fetch_data
-    predictor   = "Predictors::Strategies::#{strategy}".constantize.new(lists, options)
+    predictor   = "Predictors::Strategies::#{strategy}".constantize.new(lists)
     batch_size  = lists.first.size
     predictor.run(batch_size, batch_size * 3)
   end

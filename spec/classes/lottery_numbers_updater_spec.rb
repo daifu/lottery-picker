@@ -10,5 +10,7 @@ describe LotteryNumbersUpdater do
   it "should load lottery_numbers from a file" do
     LotteryNumbersUpdater.update_all
     LotteryNumber.count.should == 134
+    r = LotteryNumber.find_by_draw_id(134)
+    r.numbers_string.should == "10|17|25|45|53|9"
   end
 end

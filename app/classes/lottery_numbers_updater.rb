@@ -32,20 +32,29 @@ class LotteryNumbersUpdater
       end
     end
 
-    long_space  = "          "
-    short_space = "     "
-    lines.each do |line|
-      draw_id,draw_date = line.split(short_space)
-      numbers_string    = line.split(long_space)[1..-1]
-      now               = Time.now.utc.to_s(:db)
-      rows << [game_id, draw_id, Time.parse(draw_date).utc.to_s(:db), numbers_string.join("|"),now, now]
-    end
+    rows = tokenize_lines(lines, game_id)
 
     Utils.create_temp_file do |file|
       file.puts(FILE_HEADER.join(','))
       rows.each do |row|
         file.puts(row.join(','))
       end
+    end
+  end
+
+  private
+
+  # tokenize lines and get deails data from each line
+  # @returns [Array<Array>]
+  def self.tokenize_lines(lines, game_id)
+    long_space  = "          "
+    short_space = "     "
+    lines.inject([]) do |rows, line|
+      draw_id,draw_date = line.split(short_space)
+      numbers_string    = line.split(long_space)[1..-1]
+      now               = Time.now.utc.to_s(:db)
+      rows << [game_id, draw_id, Time.parse(draw_date).utc.to_s(:db), numbers_string.join("|"),now, now]
+      rows
     end
   end
 end

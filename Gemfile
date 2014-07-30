@@ -61,7 +61,6 @@ group :development do
   gem 'capistrano', '~> 2.15'
   gem 'rvm-capistrano'
   gem 'capistrano-ext'
-  gem "zeus"
 end
 
 group :test do
