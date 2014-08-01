@@ -11,6 +11,6 @@ role :web, "www.recommendationengine.co"
 role :app, "www.recommendationengine.co"
 role :db, "www.recommendationengine.co", :primary => true
 
-disable_path = "/var/www/hiyou_server/current/public"
+disable_path = "/var/www/lottery_picker/current/public"
 
 after "deploy:update_code", "deploy:migrate"

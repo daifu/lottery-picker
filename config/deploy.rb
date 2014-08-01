@@ -15,7 +15,7 @@ set :bundle_without, [:darwin, :development, :test]
 set :keep_releases, 5
 after "deploy", "deploy:cleanup"
 
-set :application, 'hiyou_server'
+set :application, 'lottery_picker'
 set :repository, "ssh://git@bitbucket.org/daifu/lottery_picker.git"
 set :deploy_via, :remote_cache
 
