@@ -16,7 +16,7 @@ set :keep_releases, 5
 after "deploy", "deploy:cleanup"
 
 set :application, 'hiyou_server'
-set :repository, "ssh://git@bitbucket.org:daifu/lottery_picker.git"
+set :repository, "ssh://git@bitbucket.org/daifu/lottery_picker.git"
 set :deploy_via, :remote_cache
 
 set :branch, 'master'
