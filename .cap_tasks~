@@ -1,5 +1,9 @@
 bundle:install
 deploy
+deploy:assets:clean
+deploy:assets:clean_expired
+deploy:assets:precompile
+deploy:assets:rollback
 deploy:check
 deploy:cleanup
 deploy:cold
