@@ -23,4 +23,4 @@ end
 
 after "deploy:update_code", "deploy:migrate"
 
-after "deploy:restart", "deploy:copy_resque_assets"
+# after "deploy:restart", "deploy:copy_resque_assets"
