@@ -40,6 +40,12 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Jquery mobile
+gem 'jquery_mobile_rails', '1.4.0'
+
+# Redis
+gem "redis", "~> 3.0.1"
+
 group :development, :test do
   gem 'byebug'
   gem 'delorean'

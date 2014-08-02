@@ -16,4 +16,15 @@ describe Predictors::Base do
       predictor.get_count_hash(data).should == {"1" => 1, "5" => 2, "6" => 2, "4" => 1}
     end
   end
+
+  describe '#predict' do
+    let(:data_loader_data) {[["1", "2", "3", "4"], ["32", "42", "34", "3"]]}
+    before do
+
+      Predictors::DataLoader.any_instance.should_receive(:fetch_data) {data_loader_data}
+    end
+    it 'should get the prediction' do
+      predictor.predict('superlotto-plus', 'MostCommon').should == ["2", "32", "34", "42"]
+    end
+  end
 end

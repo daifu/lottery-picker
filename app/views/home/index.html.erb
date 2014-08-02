@@ -1,1 +1,21 @@
-<%= @type %>: <%= @super_lotto_numbers %>
+<div data-role="page" data-theme="e">
+  <div data-role="header" data-position="inline">
+    <h1>Lottery Picker</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><%= link_to "Most Common", "?strategy=MostCommon", :data => {:icon => 'arrow-d'}, :class => @home_presenters.active_class('MostCommon') %></li>
+        <li><%= link_to "Least Common", "?strategy=LeastCommon", :data => {:icon => 'arrow-u'}, :class => @home_presenters.active_class('LeastCommon') %></li>
+        <li><%= link_to "Mix", "?strategy=Mix", :data => {:icon => 'recycle'}, :class => @home_presenters.active_class('Mix') %></li>
+        <li><%= link_to "Refresh", "?refresh=true", :data => {:icon => 'refresh'} %></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content" data-theme="e">
+    <ul data-role="listview" data-inset="true">
+    <% @home_presenters.games.each_pair do |name, numbers| %>
+    <li><%= name %>: <%= numbers %></li>
+    <% end %>
+    </ul>
+  </div>
+
+</div>

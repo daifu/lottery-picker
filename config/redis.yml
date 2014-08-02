@@ -1,0 +1,4 @@
+production:
+  host: recommendationengine.co
+  port: 6379
+  user: admin

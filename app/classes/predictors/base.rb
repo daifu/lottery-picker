@@ -26,13 +26,13 @@ class Predictors::Base
 
   # select top n number from an array of x
   # @params data [Array] ['1', '3']
-  # @params n [Fixnum]
-  def random_select_top_n(data, n)
-    return data if n > data.size
+  # @params top_n [Fixnum]
+  def random_select_top_n(data, top_n)
+    return data if top_n > data.size
     ret = []
     range = create_prod_ary data.size
     size  = range.last
-    n.times.each do |i|
+    top_n.times.each do |i|
       num = rand(size)
       idx = num_to_idx(num, range)
       unique_insert(ret, data, idx)

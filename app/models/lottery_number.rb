@@ -1,5 +1,5 @@
 class LotteryNumber < ActiveRecord::Base
-  validates :type_id, :presence => true
+  validates :game_id, :presence => true
   validates :draw_date, :presence => true
 
   GAMES = {

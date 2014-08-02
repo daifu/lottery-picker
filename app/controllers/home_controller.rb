@@ -2,9 +2,7 @@ class HomeController < ApplicationController
   before_filter :set_predictor
 
   def index
-    @strategy = params[:strategy] || 'MostCommon'
-    @type     = params[:type] || 'superlotto-plus'
-    @super_lotto_numbers = @predictor.predict(@type, @strategy)
+    @home_presenters = HomePresenter.new(@predictor, params)
   end
 
   private

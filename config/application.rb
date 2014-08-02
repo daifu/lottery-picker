@@ -22,5 +22,6 @@ module LotteryPicker
 
     config.autoload_paths << Rails.root.join('app/classes')
     config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('app/presenters')
   end
 end
