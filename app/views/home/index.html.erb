@@ -13,7 +13,8 @@
   <div data-role="content" data-theme="e">
     <ul data-role="listview" data-inset="true">
     <% @home_presenters.games.each_pair do |name, numbers| %>
-    <li><%= name %>: <%= numbers %></li>
+    <li data-role="list-divider"><%= name %></li>
+    <li><%= numbers.join(", ") %></li>
     <% end %>
     </ul>
   </div>
