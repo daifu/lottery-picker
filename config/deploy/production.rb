@@ -13,4 +13,14 @@ role :db, "www.recommendationengine.co", :primary => true
 
 disable_path = "/var/www/lottery_picker/current/public"
 
+namespace :deploy do
+  desc "Copy resque-web assets into public folder"
+  task :copy_resque_assets do
+    target = File.join(release_path,'public','resque')
+    run "cp -r `cd #{release_path} && bundle show resque`/lib/resque/server/public #{target}"
+  end
+end
+
 after "deploy:update_code", "deploy:migrate"
+
+after "deploy:restart", "deploy:copy_resque_assets"
