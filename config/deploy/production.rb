@@ -13,6 +13,10 @@ role :db, "www.recommendationengine.co", :primary => true
 
 disable_path = "/var/www/lottery_picker/current/public"
 
+# update the cron job
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
+
 namespace :deploy do
   desc "Copy resque-web assets into public folder"
   task :copy_resque_assets do
