@@ -58,6 +58,14 @@ Rails.application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
   config.action_mailer.default_url_options = { :host => 'soh.recommendationengine.co' }
 
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    :address => "127.0.0.1",
+    :port    => 1025,
+    :domain  => 'soh.recommendationengine.co'
+  }
+
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
