@@ -12,7 +12,7 @@ class LotteryNumber < ActiveRecord::Base
   }
 
   def self.get_numbers_string_by_type(type)
-    raise RuntimeError, "No matching game[#{type}]" if GAMES[type].nil?
+    raise RuntimeError, "No matching GAMES[#{type}]" if GAMES[type].nil?
     self.where("game_id=#{GAMES[type]}").pluck(:numbers_string)
   end
 end

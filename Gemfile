@@ -86,6 +86,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'webmock', require: false
+  gem "codeclimate-test-reporter", require: false
 end
 
 group :production do
