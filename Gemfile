@@ -45,6 +45,15 @@ gem 'jquery_mobile_rails', '1.4.0'
 
 # Redis
 gem "redis", "~> 3.0.1"
+# Resque
+gem 'resque', require: 'resque/server' # Resque web interface
+gem 'resque-retry'
+gem 'resque-scheduler'
+gem 'resque_mailer'
+gem 'exception_notification', github: 'daifu/exception_notification', branch: 'master'
+
+# Cron job
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug'
@@ -61,7 +70,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'letter_opener'
+  gem "letter_opener" # View emails in browser instead of sending them
   gem 'bullet'
   gem 'meta_request'
   gem 'capistrano', '~> 2.15'

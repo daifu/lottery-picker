@@ -11,6 +11,9 @@ require 'bundler/capistrano'
 set :bundle_cmd, "bundle"
 
 set :bundle_without, [:darwin, :development, :test]
+after "deploy:restart", "resque_workers:restart"
+after "deploy:stop", "resque_workers:stop"
+after "deploy:start", "resque_workers:start"
 
 set :keep_releases, 5
 after "deploy", "deploy:cleanup"

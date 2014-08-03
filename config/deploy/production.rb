@@ -23,4 +23,21 @@ end
 
 after "deploy:update_code", "deploy:migrate"
 
-# after "deploy:restart", "deploy:copy_resque_assets"
+after "deploy:restart", "deploy:copy_resque_assets"
+
+# resque_workers hooks
+namespace :resque_workers do
+  [:start, :stop, :restart].each do |t|
+    task t, :roles => [:app] do
+      sudo "monit -g resque_workers #{t}"
+    end
+  end
+end
+
+namespace :deploy do
+  desc "Copy resque-web assets into public folder"
+  task :copy_resque_assets do
+    target = File.join(release_path,'public','resque')
+    run "cp -r `cd #{release_path} && bundle show resque`/lib/resque/server/public #{target}"
+  end
+end

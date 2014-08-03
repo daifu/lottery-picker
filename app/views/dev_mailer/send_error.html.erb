@@ -1,0 +1,13 @@
+A <%= @caller %> occurred error at <%= @time %>.
+<br/>
+<br/>
+-------------------------------<br/>
+Message:<br/>
+-------------------------------<br/>
+<p><%= "#{@message} (#{@class_name})" %></p>
+
+
+-------------------------------<br/>
+Backtrace:<br/>
+-------------------------------<br/>
+<p><%= @backtrace.join('<br/>').html_safe %></p>

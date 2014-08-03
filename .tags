@@ -7,41 +7,62 @@
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:LotteryPicker
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CronRunner	lib/cron_runner.rb	/^class CronRunner$/;"	c
 DbImporter	app/classes/db_importer.rb	/^class DbImporter$/;"	c
+DevMailer	app/mailers/dev_mailer.rb	/^class DevMailer < ActionMailer::Base$/;"	c
 HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
 HomeHelper	app/helpers/home_helper.rb	/^module HomeHelper$/;"	m
+HomePresenter	app/presenters/home_presenter.rb	/^class HomePresenter$/;"	c
 LeastCommon	app/classes/predictors/strategies/least_common.rb	/^    class LeastCommon < Predictors::Base$/;"	c	class:Predictors.Strategies
 LotteryNumber	app/models/lottery_number.rb	/^class LotteryNumber < ActiveRecord::Base$/;"	c
 LotteryNumbersUpdater	app/classes/lottery_numbers_updater.rb	/^class LotteryNumbersUpdater$/;"	c
 LotteryPicker	config/application.rb	/^module LotteryPicker$/;"	m
+Mix	app/classes/predictors/strategies/mix.rb	/^    class Mix < Predictors::Base$/;"	c	class:Predictors.Strategies
 MostCommon	app/classes/predictors/strategies/most_common.rb	/^    class MostCommon < Predictors::Base$/;"	c	class:Predictors.Strategies
 Predictors	app/classes/predictors/base.rb	/^class Predictors::Base$/;"	c
 Predictors	app/classes/predictors/data_loader.rb	/^class Predictors::DataLoader$/;"	c
 Predictors	app/classes/predictors/strategies/least_common.rb	/^module Predictors$/;"	m
+Predictors	app/classes/predictors/strategies/mix.rb	/^module Predictors$/;"	m
 Predictors	app/classes/predictors/strategies/most_common.rb	/^module Predictors$/;"	m
+RedisCache	app/classes/redis_cache.rb	/^class RedisCache$/;"	c
 Strategies	app/classes/predictors/strategies/least_common.rb	/^  module Strategies$/;"	m	class:Predictors
+Strategies	app/classes/predictors/strategies/mix.rb	/^  module Strategies$/;"	m	class:Predictors
 Strategies	app/classes/predictors/strategies/most_common.rb	/^  module Strategies$/;"	m	class:Predictors
 Utils	lib/utils.rb	/^class Utils$/;"	c
+active_class	app/presenters/home_presenter.rb	/^  def active_class(x)$/;"	f
 convert_file	app/classes/lottery_numbers_updater.rb	/^  def self.convert_file(file, game_id)$/;"	F	class:LotteryNumbersUpdater
 create_prod_ary	app/classes/predictors/base.rb	/^  def create_prod_ary(size)$/;"	f	class:Predictors
 create_temp_file	lib/utils.rb	/^  def self.create_temp_file(type = "utils_tmp", prefix = "tmp", options = {})$/;"	F	class:Utils
 create_temp_filename	lib/utils.rb	/^  def self.create_temp_filename(type = "util_tmp", prefix = "tmp", options = {})$/;"	F	class:Utils
+delete_all	app/presenters/home_presenter.rb	/^  def delete_all$/;"	f
 download_game_file	lib/utils.rb	/^  def self.download_game_file(game_name)$/;"	F	class:Utils
+email_exception_if_raised	lib/cron_runner.rb	/^  def self.email_exception_if_raised(caller, &block)$/;"	F	class:CronRunner
+empty!	app/classes/redis_cache.rb	/^  def empty!(key)$/;"	f	class:RedisCache
 fetch_data	app/classes/predictors/data_loader.rb	/^  def fetch_data$/;"	f	class:Predictors
+games	app/presenters/home_presenter.rb	/^  def games$/;"	f	class:HomePresenter
+get	app/classes/redis_cache.rb	/^  def get(key)$/;"	f	class:RedisCache
 get_count_hash	app/classes/predictors/base.rb	/^  def get_count_hash(data)$/;"	f	class:Predictors
-get_numbers_string_by_type	app/models/lottery_number.rb	/^  def get_numbers_string_by_type(type)$/;"	f	class:LotteryNumber
+get_numbers_string_by_type	app/models/lottery_number.rb	/^  def self.get_numbers_string_by_type(type)$/;"	F	class:LotteryNumber
 import_simple_table	app/classes/db_importer.rb	/^  def self.import_simple_table(name, columns, file, options = {})$/;"	F	class:DbImporter
 index	app/controllers/home_controller.rb	/^  def index$/;"	f	class:HomeController
 initialize	app/classes/predictors/data_loader.rb	/^  def initialize(type)$/;"	f	class:Predictors
 initialize	app/classes/predictors/strategies/least_common.rb	/^      def initialize(data)$/;"	f	class:Predictors.Strategies.LeastCommon
+initialize	app/classes/predictors/strategies/mix.rb	/^      def initialize(data)$/;"	f	class:Predictors.Strategies.Mix
 initialize	app/classes/predictors/strategies/most_common.rb	/^      def initialize(data)$/;"	f	class:Predictors.Strategies.MostCommon
+initialize	app/classes/redis_cache.rb	/^  def initialize(option={})$/;"	f	class:RedisCache
+initialize	app/presenters/home_presenter.rb	/^  def initialize(predictor, params)$/;"	f	class:HomePresenter
+is_json?	app/classes/redis_cache.rb	/^  def is_json?(str)$/;"	f	class:RedisCache
 load_file_to_db	lib/utils.rb	/^  def load_file_to_db(file)$/;"	f	class:Utils
 num_to_idx	app/classes/predictors/base.rb	/^  def num_to_idx(num, range)$/;"	f	class:Predictors
 predict	app/classes/predictors/base.rb	/^  def predict(type, strategy, options={})$/;"	f	class:Predictors
-random_select_top_n	app/classes/predictors/base.rb	/^  def random_select_top_n(data, n)$/;"	f	class:Predictors
+random_select_top_n	app/classes/predictors/base.rb	/^  def random_select_top_n(data, top_n)$/;"	f	class:Predictors
 run	app/classes/predictors/strategies/least_common.rb	/^      def run(batch_size, boundary=10)$/;"	f	class:Predictors.Strategies.LeastCommon
+run	app/classes/predictors/strategies/mix.rb	/^      def run(batch_size, boundary=10)$/;"	f	class:Predictors.Strategies.Mix
 run	app/classes/predictors/strategies/most_common.rb	/^      def run(batch_size, boundary=10)$/;"	f	class:Predictors.Strategies.MostCommon
+send_error	app/mailers/dev_mailer.rb	/^  def self.send_error(caller, backtrace, message, class_name)$/;"	F	class:DevMailer
+set	app/classes/redis_cache.rb	/^  def set(key, value)$/;"	f	class:RedisCache
 set_predictor	app/controllers/home_controller.rb	/^  def set_predictor$/;"	f	class:HomeController
 tokenize_lines	app/classes/lottery_numbers_updater.rb	/^  def self.tokenize_lines(lines, game_id)$/;"	F	class:LotteryNumbersUpdater
 unique_insert	app/classes/predictors/base.rb	/^  def unique_insert(array, data, idx, max_tries=10)$/;"	f	class:Predictors
 update_all	app/classes/lottery_numbers_updater.rb	/^  def self.update_all$/;"	F	class:LotteryNumbersUpdater
+update_lottery_number	lib/cron_runner.rb	/^  def self.update_lottery_number$/;"	F	class:CronRunner
