@@ -7,6 +7,4 @@
 
 Since I am lazy to guess the lottery number and I dont like the machine at the store, so i created this one to help me to decide.
 
-demo site HERE[http://soh.recommendationengine.co/?strategy=MostCommon]
-
 
