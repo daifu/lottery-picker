@@ -27,4 +27,4 @@ LotteryNumbersUpdater.update_all # import data to the database.
 == Screen shot
 
 
-{<img src="https://www.evernote.com/l/ADkmSAge6pBJRZ6oBIZ3rSbtHginM760qEQ" />} [https://www.evernote.com/l/ADkmSAge6pBJRZ6oBIZ3rSbtHginM760qEQ]
+{<img src="https://www.evernote.com/l/ADkmSAge6pBJRZ6oBIZ3rSbt6UgE5_hekyAB/image.png" />} [Screenshot]
