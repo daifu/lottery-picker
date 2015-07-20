@@ -7,4 +7,24 @@
 
 Since I am lazy to guess the lottery number and I dont like the machine at the store, so i created this one to help me to decide.
 
+== Getting Started
 
+1. Install require gems.
+
+bundle install
+
+2. Run migration
+
+bundle exec rake db:create
+bundle exec rake db:migrate
+
+3. Populate data to the database
+
+rails c
+
+LotteryNumbersUpdater.update_all # import data to the database.
+
+== Screen shot
+
+
+{<img src="https://www.evernote.com/l/ADkmSAge6pBJRZ6oBIZ3rSbtHginM760qEQ" />} [Screenshot]

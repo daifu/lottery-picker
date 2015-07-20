@@ -14,12 +14,12 @@ class Utils
   end
 
   def load_file_to_db(file)
-    
+
   end
 
   def self.download_game_file(game_name)
     base = "www.calottery.com"
-    path = "/sitecore/content/Miscellaneous/download-numbers/?GameName=#{game_name}"
+    path = "/sitecore/content/Miscellaneous/download-numbers/?GameName=#{game_name}&Order=Yes"
     Utils.create_temp_file do |tmp_file|
       Net::HTTP.start(base) do |http|
         resp = http.get(path)

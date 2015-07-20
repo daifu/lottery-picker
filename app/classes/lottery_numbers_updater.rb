@@ -24,7 +24,7 @@ class LotteryNumbersUpdater
   def self.convert_file(file, game_id)
     lines = []
     rows  = []
-    
+
     File.open(file, 'r') do |f|
       5.times {f.gets} # remove headers
       while(line = f.gets)
