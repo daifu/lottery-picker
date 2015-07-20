@@ -11,18 +11,26 @@ Since I am lazy to guess the lottery number and I dont like the machine at the s
 
 1. Install require gems.
 
+<code>
 bundle install
+</code>
 
 2. Run migration
 
+<code>
 bundle exec rake db:create
 bundle exec rake db:migrate
+</code>
 
 3. Populate data to the database
 
-rails c
+<code>
+rails c # log into the rails server
+</code>
 
+<code>
 LotteryNumbersUpdater.update_all # import data to the database.
+</code>
 
 == Screen shot
 
