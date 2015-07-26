@@ -35,4 +35,4 @@ LotteryNumbersUpdater.update_all # import data to the database.
 == Screen shot
 
 
-{<img src="https://www.evernote.com/shard/s57/sh/2648081e-ea90-4945-9ea8-048677ad26ed/e94804e7f85e9320/deep/0/" style="width:400px" />}[https://www.evernote.com/shard/s57/sh/2648081e-ea90-4945-9ea8-048677ad26ed/e94804e7f85e9320/deep/0/]
+{<img src="https://www.evernote.com/l/ADmmAuA834tDM71Ma8J68h6f8BM1yY2g8aMB/image.png" style="width:400px" />}[https://www.evernote.com/l/ADmmAuA834tDM71Ma8J68h6f8BM1yY2g8aMB/image.png]
