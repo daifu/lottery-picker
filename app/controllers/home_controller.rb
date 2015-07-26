@@ -8,6 +8,6 @@ class HomeController < ApplicationController
   private
 
   def set_predictor_creator
-    @predictor_creator = PredictoryCreator.new
+    @predictor_creator = PredictorCreator.new
   end
 end

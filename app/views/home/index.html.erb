@@ -6,6 +6,7 @@
         <li><%= link_to "Most Common", "?strategy=MostCommon", :data => {:icon => 'arrow-d'}, :class => @home_presenters.active_class('MostCommon') %></li>
         <li><%= link_to "Least Common", "?strategy=LeastCommon", :data => {:icon => 'arrow-u'}, :class => @home_presenters.active_class('LeastCommon') %></li>
         <li><%= link_to "Mix", "?strategy=Mix", :data => {:icon => 'recycle'}, :class => @home_presenters.active_class('Mix') %></li>
+        <li><%= link_to "All", "?strategy=All", :data => {:icon => 'bars'}, :class => @home_presenters.active_class('All') %></li>
         <li><%= link_to "Refresh", "?refresh=true", :data => {:icon => 'refresh'} %></li>
       </ul>
     </div>
