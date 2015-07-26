@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe LotteryNumber do
   it 'should raise exception if not found game type' do
-    expect {LotteryNumber.get_numbers_string_by_type('error')}.should raise_error
+    expect { LotteryNumber.get_numbers_string_by_type('error') }.should raise_error
   end
 
   context 'when db is populated' do

@@ -1,13 +1,13 @@
 class HomeController < ApplicationController
-  before_filter :set_predictor
+  before_filter :set_predictor_creator
 
   def index
-    @home_presenters = HomePresenter.new(@predictor, params)
+    @home_presenters = HomePresenter.new(@predictor_creator, params)
   end
 
   private
 
-  def set_predictor
-    @predictor = Predictors::Base.new
+  def set_predictor_creator
+    @predictor_creator = PredictoryCreator.new
   end
 end

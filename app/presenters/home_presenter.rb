@@ -1,18 +1,19 @@
 class HomePresenter
   STRATEGIES = ['MostCommon', 'LeastCommon', 'Mix']
 
-  def initialize(predictor, params)
-    @strategy  = params[:strategy] || 'MostCommon'
-    @predictor = predictor
-    @cache     = RedisCache.new(:expire_in => 1.day)
-    @refresh   = params[:refresh]
+  def initialize(predictor_creator, params)
+    @strategy          = params[:strategy] || 'MostCommon'
+    @predictor_creator = predictor_creator
+    @cache             = RedisCache.new(:expire_in => 1.day)
+    @refresh           = params[:refresh]
   end
 
   def games
     delete_all if @refresh
     @games = if !@cache.exists(@strategy)
-               games = LotteryNumber::GAMES.each_with_object({}) do |(name, _), memo|
-                 memo[name] = @predictor.predict(name, @strategy)
+               games = LotteryNumber::GAMES.each_with_object({}) do |(game_type, _), memo|
+                predictor        = @predictor_creator.create_predictor(game_type, @strategy)
+                 memo[game_type] = predictor.predict
                end
                @cache.set(@strategy, games.to_json)
                games

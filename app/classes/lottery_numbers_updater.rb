@@ -5,7 +5,7 @@ class LotteryNumbersUpdater
   # 1. download the file from califronia lottery
   # 2. Parse it and load it to the db
   def self.update_all
-    LotteryNumber::GAMES.keys.each do |game|
+    game_hash.keys.each do |game|
       game_id  = LotteryNumber::GAMES[game]
       raw_file = Utils.download_game_file(game)
       file     = convert_file(raw_file, game_id)
@@ -40,6 +40,11 @@ class LotteryNumbersUpdater
         file.puts(row.join(','))
       end
     end
+  end
+
+  # For spec stubing
+  def self.game_hash
+    LotteryNumber::GAMES
   end
 
   private

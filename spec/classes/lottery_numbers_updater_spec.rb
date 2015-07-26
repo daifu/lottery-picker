@@ -3,8 +3,8 @@ require 'spec_helper'
 describe LotteryNumbersUpdater do
   let(:file) {'files/power_ball.txt'}
   before do
-    LotteryNumber::GAMES = {'powerball' => 2}
-    Utils.should_receive(:download_game_file).with('powerball') {file}
+    LotteryNumbersUpdater.stub(:game_hash).and_return({'powerball' => 2})
+    Utils.should_receive(:download_game_file).with('powerball') { file }
   end
 
   it "should load lottery_numbers from a file" do

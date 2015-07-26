@@ -55,6 +55,9 @@ gem 'exception_notification', github: 'daifu/exception_notification', branch: 'm
 # Cron job
 gem 'whenever', :require => false
 
+# create a better hash
+gem 'hashie'
+
 group :development, :test do
   gem 'byebug'
   gem 'delorean'

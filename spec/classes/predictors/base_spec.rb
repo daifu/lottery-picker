@@ -1,30 +1,29 @@
 require 'spec_helper'
 
 describe Predictors::Base do
-  let(:predictor) {Predictors::Base.new}
-  let(:data) {[6,4,7,2,1,9,8,0]}
-  let(:n) {3}
-  before { srand(2) } # Random can be deterministric
-  it "should predict based on type and strategy" do
-    predictor.random_select_top_n(data, n).should == [1, 2, 8]
-  end
+  let(:predictor) { Predictors::Base.new(data) }
 
-  describe "#get_count_hash" do
-    let(:data) {[["1", "5"],["5","6"], ["6", "4"]]}
+  let(:data) {[["1", "5"],["5","6"], ["6", "4"]]}
+  let(:frequency_hash) { {"1" => 1, "5" => 2, "6" => 2, "4" => 1} }
 
+  describe "#aggregate_data_with_frequency" do
     it "should get the correct out hash" do
-      predictor.get_count_hash(data).should == {"1" => 1, "5" => 2, "6" => 2, "4" => 1}
+      predictor.aggregate_data_with_frequency.should == frequency_hash
     end
   end
 
   describe '#predict' do
-    let(:data_loader_data) {[["1", "2", "3", "4"], ["32", "42", "34", "3"]]}
     before do
-
-      Predictors::DataLoader.any_instance.should_receive(:fetch_data) {data_loader_data}
+      Random.srand(993)
+      predictor.should_receive(:use_sample).and_return(frequency_hash)
     end
+
+    after do
+      Random.srand
+    end
+
     it 'should get the prediction' do
-      predictor.predict('superlotto-plus', 'MostCommon').should == ["2", "32", "34", "42"]
+      predictor.predict.should == ["5", "1"]
     end
   end
 end
